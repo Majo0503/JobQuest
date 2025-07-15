@@ -1,6 +1,5 @@
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
-import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import Company from "layouts/company";
 import Icon from "@mui/material/Icon";

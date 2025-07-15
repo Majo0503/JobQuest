@@ -36,7 +36,6 @@ import EntrevistaFases from "pages/EntrevistaFases";
 import GuiaUso from "pages/GuiaUso";
 import ResetPassword from "pages/ResetPassword";
 import Servicios from "pages/Servicios";
-import Index from "pages/Index";
 import Login from "pages/Login";
 
 // Imágenes
@@ -75,14 +74,7 @@ export default function App() {
 
   // ✅ Activar layout "dashboard" solo en rutas exactas
   useEffect(() => {
-    const dashboardPaths = [
-      "/menu",
-      "/clientes",
-      "/empresas",
-      "/entrevistas",
-      "/notifications",
-      "/perfil",
-    ];
+    const dashboardPaths = ["/menu", "/clientes", "/empresas", "/entrevistas", "/perfil"];
     const isDashboardPath = dashboardPaths.some((path) => pathname.startsWith(path));
     setLayout(dispatch, isDashboardPath ? "dashboard" : "public");
   }, [pathname, dispatch]);
@@ -163,7 +155,6 @@ export default function App() {
         <Route path="guia-uso" element={<GuiaUso />} />
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="servicios" element={<Servicios />} />
-        <Route path="index" element={<Index />} />
         <Route path="login" element={<Login />} />
         <Route path="user" element={<Perfil />} />
       </Route>
