@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.contact-title {
+  font-size: 42px;
+  text-align: center;
+  color: #f1a523;
+  margin-bottom: 10px;
+}
+
+.contact-description {
+  text-align: center;
+  font-size: 18px;
+  color: #000000;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: #013444;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-header h3 {
+  font-size: 20px;
+  color: #f1a523;
+  text-align: center;
+  margin: 0;
+}
+
+.service-short {
+  color: #bdbdbd;
+  margin: 15px 0 10px;
+  text-align: center;
+}
+
+.service-expand {
+  display: inline-block;
+  background-color: #f1a523;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  margin: 15px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.service-expand:hover {
+  background-color: #d98e11;
+  color: #fff;
+}
+
+.service-full {
+  background-color: #f0f6ff;
+  border-left: 4px solid #f1a523;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #333;
+  font-size: 15px;
+  text-align: justify;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-description {
+    font-size: 16px;
+  }
+
+  .service-header h3 {
+    font-size: 18px;
+  }
+
+  .service-image {
+    width: 50px;
+    height: 50px;
+  }
+}

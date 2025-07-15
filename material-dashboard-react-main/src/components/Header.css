@@ -1,0 +1,127 @@
+/* ---- NAVBAR GENERAL ---- */
+.nav-bar {
+  width: 100%;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  background-color: #18323f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fondo general */
+.nav-background {
+  width: 100%;
+}
+
+/* LOGO */
+.navbar-brand h1 {
+  font-family: "EB Garamond", serif;
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.highlight-primary {
+  color: #f1a523 !important;
+  font-weight: bold;
+}
+
+/* NAVBAR LINKS */
+.custom-navbar {
+  background-color: #18323f !important;
+  font-family: "EB Garamond", serif;
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #ffc107 !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* DROPDOWN */
+.custom-nav-dropdown-toggle {
+  color: #ffffff !important;
+  cursor: pointer;
+  font-family: "EB Garamond", serif;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.custom-nav-dropdown-toggle:hover {
+  color: #ffc107 !important;
+}
+
+.custom-nav-dropdown-menu {
+  background-color: #ffffff !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.custom-nav-dropdown-item {
+  color: #18323f !important;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.custom-nav-dropdown-item:hover {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+}
+
+/* HAMBURGUER ICON */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Optional animation */
+.navbar-toggler.active .navbar-toggler-icon {
+  transform: rotate(90deg);
+}
+
+/* ---- ANIMACIONES ---- */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar-nav {
+    background: #18323f;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .custom-nav-dropdown-menu {
+    position: relative;
+    box-shadow: none;
+  }
+}
+.nav-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}

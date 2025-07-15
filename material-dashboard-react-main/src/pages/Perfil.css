@@ -1,0 +1,80 @@
+.perfil {
+  font-family: "EB Garamond", serif;
+  padding: 2rem;
+  background-color: #fff;
+  color: #f0f0f0;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.perfil-card {
+  background-color: #18323f;
+  margin-top: -50px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgb(245, 243, 243);
+  text-align: center;
+}
+
+.perfil-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+.perfil-info {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.perfil-info label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #f5efef;
+}
+
+.perfil-info p,
+input {
+  margin-top: 5px;
+  font-size: 1rem;
+  width: 100%;
+  color: #050505;
+  background-color: #f0eaea;
+  border: 1px solid #9b9999;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4caf50;
+  background-color: #333;
+  color: #fff;
+}
+
+button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #f1a523;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fddd92;
+}

@@ -1,0 +1,433 @@
+/* === VARIABLES GLOBALES === */
+:root {
+  --primary: #4a80ed; /* Un azul más cercano al de la imagen para el botón y enlaces */
+  --primary-hover: #3d6ddb; /* Un tono un poco más oscuro para el hover */
+  --success: #22c55e;
+  --error: #ef4444;
+
+  --bg-dark: #1e283b; /* Fondo principal más claro, como en la imagen */
+  --bg-light: #2c3a50; /* Fondo del formulario, un gris azulado oscuro como en la imagen */
+  --bg-input: #1a233b; /* Fondo de los inputs, un gris azulado muy oscuro, casi negro */
+  --bg-input-focus: #1a233b; /* El foco mantiene el mismo color de fondo del input para este estilo */
+
+  --text-light: #e0e6f0; /* Un blanco suave para títulos y texto general */
+  --text-muted: #8c9bb7; /* Gris azulado para placeholders y texto secundario */
+  --text-placeholder: #8c9bb7; /* Mismo color para placeholders que para texto muted */
+
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra ajustada para un efecto más sutil */
+  --radius: 12px; /* Bordes ligeramente menos redondeados, como en la imagen */
+  --blur: 10px; /* Efecto blur ligeramente menos pronunciado (aunque lo hemos quitado del form-container) */
+  --transition: 0.25s ease; /* Transición más rápida */
+
+  --font-main: "Segoe UI", system-ui, sans-serif; /* Fuente estándar, se ve similar */
+
+  --primary-rgb: 74, 128, 237; /* RGB del --primary para sombras */
+}
+
+/* === CLASES DE ACCESIBILIDAD === */
+/* Clase para ocultar visualmente elementos, pero mantenerlos accesibles para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* === CONTENEDOR GENERAL === */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-dark); /* Fondo uniforme, como en la imagen */
+  padding: 20px;
+  font-family: var(--font-main);
+  overflow: hidden;
+  position: relative;
+}
+
+/* === FORMULARIO --- EXACTAMENTE como en la imagen */
+.form-container {
+  background: var(--bg-light);
+  color: var(--text-light);
+  /* backdrop-filter: blur(var(--blur));  Removido, la imagen no parece tener un blur tan pronunciado */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 45px 35px; /* Padding ajustado para coincidir con la imagen */
+  width: 100%;
+  max-width: 420px; /* Ancho ajustado para que se vea como en la imagen */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Borde muy sutil, apenas visible */
+  animation: fadeIn 0.5s ease-out; /* Animación de entrada para el formulario */
+}
+
+/* === TITULOS --- Como en la imagen */
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 30px; /* Espacio debajo del título */
+  font-size: 28px; /* Tamaño de fuente del título */
+  font-weight: 600; /* Peso de la fuente */
+  color: var(--text-light);
+  letter-spacing: -0.2px; /* Ligero ajuste */
+}
+
+/* === GRUPO DE INPUT CON ICONO Y PLACEHOLDER --- Como en la imagen */
+.input-group {
+  position: relative;
+  margin-bottom: 18px; /* Espacio entre inputs, como en la imagen */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 16px 16px 48px; /* Padding: Top/Bottom, Right, Left (para el icono) */
+  background-color: var(--bg-input); /* Fondo de input como en la imagen */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil del input */
+  border-radius: 10px; /* Bordes de input más sutilmente redondeados */
+  font-size: 16px;
+  color: var(--text-light);
+  transition: all var(--transition);
+  box-sizing: border-box;
+}
+
+/* Estilo para los placeholders */
+.input-group input::placeholder {
+  color: var(--text-placeholder);
+  opacity: 1;
+  transition: opacity var(--transition);
+}
+
+/* Cuando el input está en foco, el placeholder puede desvanecerse un poco */
+.input-group input:focus::placeholder {
+  opacity: 0.7;
+}
+
+/* === ICONOS DE INPUT --- EXACTAMENTE como en la imagen */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; /* Tamaño del icono */
+  color: var(--text-muted); /* Color del icono */
+  pointer-events: none; /* Icono de sobre/candado no interactivo por defecto */
+}
+
+.input-icon.left {
+  left: 18px; /* Posicionamiento del icono izquierdo (Correo/Contraseña) */
+}
+
+.input-icon.right {
+  right: 18px; /* Posicionamiento del icono derecho (Ojo) */
+  pointer-events: auto; /* El icono de ojo sí es interactivo */
+  cursor: pointer; /* Cursor de puntero para el ojo */
+  font-size: 22px; /* El ojo es un poco más grande en la imagen */
+  transition: color var(--transition); /* Transición para el color del icono al interactuar */
+}
+
+.input-icon.right:hover {
+  color: var(--primary); /* Cambiar color al pasar el ratón sobre el ojo */
+}
+
+/* === FOCUS INPUT --- Como en la imagen */
+input:focus {
+  outline: none;
+  background-color: var(--bg-input-focus); /* Mismo color de fondo en foco */
+  box-shadow: 0 0 0 2px var(--primary); /* Borde de foco del color primario */
+  border-color: var(--primary); /* Borde cambia a color primario en foco */
+}
+
+/* === CHECKBOX "Recuérdame" --- Como en la imagen */
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* Más cerca del input de contraseña */
+  margin-bottom: 25px; /* Espacio antes del botón Entrar */
+  font-size: 14px; /* Tamaño de fuente para "Recuérdame" */
+  color: var(--text-muted);
+}
+
+.remember-me-container input[type="checkbox"] {
+  margin-right: 8px; /* Menos margen a la derecha del checkbox */
+  accent-color: var(--primary); /* Color del checkbox cuando está marcado */
+  width: 16px; /* Tamaño del checkbox */
+  height: 16px; /* Tamaño del checkbox */
+  border-radius: 3px; /* Bordes del checkbox */
+  cursor: pointer;
+  /* Estilos adicionales para un checkbox más moderno si es necesario */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid var(--text-muted);
+  background-color: var(--bg-input);
+  transition: all var(--transition);
+  display: grid;
+  place-content: center;
+}
+
+.remember-me-container input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--text-light);
+  background-color: CanvasText;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.remember-me-container input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.remember-me-container input[type="checkbox"]:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* === BOTÓN PRINCIPAL "Entrar" --- Como en la imagen */
+button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px; /* Padding del botón */
+  border-radius: 10px; /* Bordes del botón */
+  font-size: 16px; /* Fuente del botón */
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color var(--transition), transform 0.15s ease, box-shadow var(--transition);
+  margin-top: 0; /* Directamente después del checkbox */
+  letter-spacing: 0.5px;
+  display: flex; /* Para centrar el texto y posible spinner */
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Espacio entre texto y spinner */
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px); /* Efecto de "levantamiento" sutil pero más pronunciado */
+  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4); /* Sombra de color al pasar el ratón */
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+button[type="submit"]:disabled {
+  background-color: var(--text-muted); /* Color gris cuando está deshabilitado */
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+/* === ENLACES INFERIORES --- Como en la imagen */
+.link-group {
+  text-align: center;
+  margin-top: 25px; /* Espacio después del botón Entrar */
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 14px; /* Fuente de los enlaces */
+  cursor: pointer;
+  text-decoration: none; /* Sin subrayado por defecto */
+  margin: 5px 0; /* Margen para los enlaces */
+  padding: 0;
+  transition: color var(--transition), text-decoration var(--transition);
+  font-weight: 500;
+  display: block; /* Cada enlace en su propia línea */
+}
+
+.link-button:hover {
+  color: var(--primary-hover);
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.text-center {
+  /* Este es el texto "¿No tienes cuenta? Crear cuenta" */
+  text-align: center;
+  margin-top: 15px; /* Espacio entre el enlace de contraseña y "No tienes cuenta" */
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.text-center .link-button {
+  /* Ajuste específico para el enlace "Crear cuenta" */
+  display: inline; /* Para que esté en la misma línea */
+  margin: 0; /* Eliminar márgenes extras */
+  font-size: 14px; /* Mantener mismo tamaño de fuente */
+  font-weight: 600; /* Un poco más de peso para destacar */
+}
+
+/* === NOTIFICACIONES TOAST === */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 240px;
+  animation: slideIn 0.4s ease forwards; /* 'forwards' para que se quede al final de la animación */
+  color: white;
+  box-shadow: var(--shadow);
+  opacity: 0; /* Iniciar oculto para la animación */
+}
+
+.toast.success {
+  background-color: var(--success);
+}
+
+.toast.error {
+  background-color: var(--error);
+}
+
+/* Si tuvieras un botón de cerrar en el toast */
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
+}
+
+/* === ANIMACIONES === */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE --- Ajustado a la proporción de la imagen */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 30px 20px;
+    max-width: 90%; /* Ajuste para móviles */
+  }
+
+  h1,
+  h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  input {
+    font-size: 15px;
+    padding: 14px 14px 14px 44px; /* Ajuste para el padding en móviles */
+  }
+
+  .input-icon.left {
+    left: 15px; /* Ajuste para el icono izquierdo en móvil */
+  }
+
+  .input-icon.right {
+    right: 15px; /* Ajuste para el icono derecho en móvil */
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .remember-me-container,
+  .link-button,
+  .text-center {
+    font-size: 13px;
+  }
+
+  .toast {
+    top: 15px;
+    right: 15px;
+    left: 15px; /* Para que ocupe todo el ancho en móviles */
+    min-width: unset;
+    font-size: 13px;
+    padding: 12px 16px;
+    text-align: center; /* Centrar texto en móviles */
+    justify-content: center; /* Centrar contenido si es flex */
+  }
+
+  .close-btn {
+    font-size: 16px;
+  }
+  /* Login.css */
+
+  .text-center {
+    text-align: center;
+    margin-top: 15px; /* Espacio entre el enlace de contraseña y el texto */
+    font-size: 14px;
+    color: var(--text-muted); /* Asegúrate de definir --text-muted en :root o usa un color fijo */
+  }
+
+  .text-center .link-button {
+    display: inline;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  /* Agrupador de enlaces como "¿Olvidaste tu contraseña?" */
+  .link-group {
+    text-align: center;
+    margin-top: 25px; /* Espacio después del botón Entrar */
+  }
+
+  /* Estilo para botones tipo enlace */
+  .link-button {
+    background: none;
+    border: none;
+    color: var(--primary); /* Usa una variable como azul principal */
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 0;
+    transition: color var(--transition), text-decoration var(--transition);
+    font-weight: 500;
+    display: block;
+  }
+
+  .link-button:hover {
+    color: var(--primary-hover); /* Azul más oscuro al pasar el mouse */
+    text-decoration: underline;
+  }
+}

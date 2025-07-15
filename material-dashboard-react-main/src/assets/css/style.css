@@ -1,0 +1,282 @@
+:root {
+  --primary: #fddd92; /* Color de botones */
+  --hover-color: #f1a523; /* Color al pasar el mouse */
+  --dark: #18323f; /* Color de fondo */
+  --text-color: #000000; /* Color de texto */
+  --font-title: "EB Garamond", serif;
+  --gray-title: #bdbaba; /* Color gris para títulos */
+}
+
+body {
+  background-color: #ffffff;
+  font-family: var(--font-title);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--dark);
+}
+
+p,
+span,
+a,
+li,
+small {
+  font-family: var(--font-title);
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.nav-bar,
+.navbar {
+  background-color: var(--dark) !important;
+}
+
+.navbar a,
+.nav-link,
+.navbar-brand {
+  color: #fff !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #000 !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+  color: #000 !important;
+}
+
+.team-carousel .item {
+  text-align: center;
+  padding: 20px;
+}
+
+.team-carousel img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+.team-carousel h5 {
+  font-weight: bold;
+  color: white;
+}
+
+.team-carousel p {
+  margin: 0;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.carousel-caption {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-caption h1 {
+  font-size: 2rem;
+  color: #073239;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+}
+
+.bg-about {
+  background-color: #18323f;
+  color: white;
+}
+
+.bg-team {
+  background-color: #18323f;
+  color: white;
+}
+
+.gray-title {
+  color: var(--gray-title);
+}
+
+/* NAVBAR */
+.nav-bar,
+.navbar {
+  background-color: #18323f !important;
+}
+
+.navbar a,
+.nav-link,
+.navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* CAROUSEL PRINCIPAL */
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.carousel-caption {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-caption h5 {
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption h1 {
+  font-size: 2rem;
+  color: #073239;
+  margin-bottom: 1rem;
+}
+
+/* ABOUT SECTION */
+.bg-about {
+  background-color: #18323f;
+  color: white;
+}
+
+.bg-about h1 span {
+  color: #f1a523;
+}
+
+.bg-about p,
+.bg-about h5,
+.bg-about span {
+  color: white;
+}
+
+.gray-title {
+  color: #bdbaba !important;
+}
+
+/* FEATURES SECTION */
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* TEAM SECTION */
+.bg-team {
+  background-color: #18323f;
+  color: white;
+}
+
+.team-carousel .team-item {
+  text-align: center;
+  padding: 15px;
+}
+
+.team-carousel img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+.team-carousel h5 {
+  font-weight: bold;
+  color: white;
+}
+
+.team-carousel span {
+  color: white;
+}
+
+.team-overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.team-item:hover .team-overlay {
+  opacity: 1;
+}
+
+/* BLOG SECTION */
+.bg-primary {
+  background-color: #fddd92 !important;
+}
+
+.text-primary {
+  color: #fddd92 !important;
+}
+
+.blog-carousel .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #18323f;
+  color: white;
+}
+
+.footer .text-white {
+  color: white !important;
+}
+
+.footer .btn-outline-primary {
+  border-color: #fddd92;
+  color: #fddd92;
+}
+
+.footer .btn-outline-primary:hover {
+  background-color: #f1a523;
+  border-color: #f1a523;
+  color: #000;
+}
+
+.footer .fa {
+  margin-right: 0.5rem;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  z-index: 999;
+}
