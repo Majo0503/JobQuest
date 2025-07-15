@@ -17,7 +17,7 @@ from sib_api_v3_sdk.configuration import Configuration
 from bson import ObjectId
 # Importación de modelos
 from modelos import user, company, permit
-
+from flask import send_from_directory
 # Inicializar Flask
 app = Flask(__name__)
 app.config['MONGO_URI'] = 'mongodb+srv://Admin:admin123@jobquest.nqj0ty2.mongodb.net/JobQuest?retryWrites=true&w=majority&tlsAllowInvalidCertificates=true'
@@ -473,7 +473,14 @@ def update_company(company_id):
 def delete_company(company_id):
     result = company_colection.delete_one({"_id": ObjectId(company_id)})
     return jsonify({"message": "Empresa eliminada correctamente"}), 200
-
+#------ ROUTA PARA VER FRONTEND-----
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_frontend(path):
+    if path != "" and os.path.exists(os.path.join("frontend", path)):
+        return send_from_directory("frontend", path)
+    else:
+        return send_from_directory("frontend", "index.html")
 # Registrar Blueprints
 app.register_blueprint(users_bp)
 app.register_blueprint(companies_bp)
